@@ -1,6 +1,5 @@
 FROM ubuntu
 
-
 ENV NODE_VERSION v7.2.1
 ENV LANG en_US.UTF-8
 
@@ -15,8 +14,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && rm -rf /var/lib/apt/lists/*
 RUN pip install git+https://github.com/jonls/s3-deploy-website
 RUN git clone https://github.com/creationix/nvm.git /.nvm
-RUN bash -c "source /.nvm/nvm.sh && \
-             nvm install $NODE_VERSION && \
-             nvm alias default $NODE_VERSION && \
-             ln -s /.nvm/versions/node/$NODE_VERSION/bin/node /usr/bin/node && \
-             ln -s /.nvm/versions/node/$NODE_VERSION/bin/npm /usr/bin/npm"
+RUN apt-get update
+RUN apt-get -y install nodejs && \
+    apt-get -y install npm
+RUN apt-get install -y openjdk-8-jre
