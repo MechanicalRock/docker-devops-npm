@@ -16,7 +16,7 @@ RUN pip install git+https://github.com/jonls/s3-deploy-website
 RUN git clone https://github.com/creationix/nvm.git /.nvm
 
 RUN apt-get update
-RUN apt-get install xvfb
+RUN apt-get install -y xvfb
 RUN apt-get install -y firefox
 
 RUN apt-get -y install nodejs && \
