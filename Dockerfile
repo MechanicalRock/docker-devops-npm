@@ -14,7 +14,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && rm -rf /var/lib/apt/lists/*
 RUN pip install git+https://github.com/jonls/s3-deploy-website
 RUN git clone https://github.com/creationix/nvm.git /.nvm
+
 RUN apt-get update
+RUN apt-get install -y firefox
+
 RUN apt-get -y install nodejs && \
     apt-get -y install npm
 RUN ln -s `which nodejs` /usr/bin/node
