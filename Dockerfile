@@ -18,3 +18,4 @@ RUN apt-get update
 RUN apt-get -y install nodejs && \
     apt-get -y install npm
 RUN apt-get install -y openjdk-8-jre
+
