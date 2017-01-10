@@ -16,9 +16,15 @@ RUN pip install git+https://github.com/jonls/s3-deploy-website
 RUN git clone https://github.com/creationix/nvm.git /.nvm
 
 RUN apt-get update
+RUN apt-get install xvfb
 RUN apt-get install -y firefox
 
 RUN apt-get -y install nodejs && \
     apt-get -y install npm
 RUN ln -s `which nodejs` /usr/bin/node
 RUN apt-get install -y openjdk-8-jre
+
+RUN npm install -g --save-dev webdriverio
+RUN npm install -g --save-dev wdio-cucumber-framework
+RUN npm install selenium-standalone@latest -g
+RUN selenium-standalone install
