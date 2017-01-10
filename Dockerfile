@@ -17,5 +17,5 @@ RUN git clone https://github.com/creationix/nvm.git /.nvm
 RUN apt-get update
 RUN apt-get -y install nodejs && \
     apt-get -y install npm
+RUN ln -s `which nodejs` /usr/bin/node
 RUN apt-get install -y openjdk-8-jre
-
