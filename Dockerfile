@@ -32,7 +32,7 @@ RUN ln -s `which nodejs` /usr/bin/node
 RUN apt-get install -y xvfb
 RUN apt-get install -y openjdk-8-jre
 
-RUN nom install -g s3-deploy
+RUN npm install -g s3-deploy
 RUN npm install -g --save-dev webdriverio
 RUN npm install -g --save-dev wdio-cucumber-framework
 RUN npm install selenium-standalone@latest -g
