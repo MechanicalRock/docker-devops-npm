@@ -38,4 +38,4 @@ RUN npm install -g --save-dev wdio-cucumber-framework
 RUN npm install selenium-standalone@latest -g
 RUN selenium-standalone install
 RUN xvfb-run --server-args="-screen 0, 1060x768x24" selenium-standalone start &
-RUN nom start &
+RUN npm start &
