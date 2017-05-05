@@ -1,10 +1,10 @@
 FROM ubuntu
 
 ENV NODE_VERSION v7.2.1
-ENV LANG en_US.UTF-8
 
-RUN locale-gen en_US en_US.UTF-8
-RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
+RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.UTF-8
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y python python-dev python-pip python3 python3-dev python3-pip \
