@@ -25,17 +25,14 @@ RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc
 RUN apt-get update
 RUN apt-get -y install google-chrome-stable
 
-RUN apt-get -y install nodejs 
+RUN apt-get -y install nodejs
 RUN apt-get -y install npm
 RUN ln -s `which nodejs` /usr/bin/node
 
 RUN apt-get install -y xvfb
-RUN apt-get install -y openjdk-8-jre
+RUN apt-get install -y openjdk-8-jdk
 
 RUN npm install -g s3-deploy
 RUN npm install -g --save-dev webdriverio
 RUN npm install -g --save-dev wdio-cucumber-framework
 RUN npm install selenium-standalone@latest -g
-RUN selenium-standalone install
-RUN xvfb-run --server-args="-screen 0, 1060x768x24" selenium-standalone start &
-RUN npm start &
